@@ -22,6 +22,6 @@ Use the UnitySerialization type instead of the BCL type for the serialized field
 ```cs
 public class MyScript : MonoBehaviour
 {
-    public SerializableDictionary<string, Texture2D> texturesWithNames;
+    public SerializableDictionary<string, Texture2D> TexturesWithNames;
 }
 ```
