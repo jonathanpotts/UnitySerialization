@@ -6,6 +6,4 @@ Provides support for serializing generic key-value pairs and dictionaries in the
 
 ## Install
 
-There are two ways to install:
-1. Download the latest release package and install it.
-2. Reference the git repository using: `https://github.com/jonathanpotts/UnitySerialization.git?path=/Assets#release`
+To install, download the [latest release](https://github.com/jonathanpotts/UnitySerialization/releases) unitypackage and install it.
