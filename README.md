@@ -1,6 +1,6 @@
 # UnitySerialization
 
-Provides support for serializing generic key-value pairs and dictionaries in the Unity editor and assets.
+Provides support for serializing selected types that are not natively serialized by Unity. This allows them to be used in the Unity editor and assets.
 
 **Requires Unity 2020.1 or newer.**
 
