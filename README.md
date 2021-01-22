@@ -10,13 +10,18 @@ To install, download the [latest release](https://github.com/jonathanpotts/Unity
 
 ## Quick start
 
-Use `SerializableDictionary<TKey, TValue>` instead of `Dictionary<TKey, TValue>` and `SerializableKeyValuePair<TKey, TValue>` instead of `KeyValuePair<TKey, TValue>` for the type for the fields in your scripts that inherit from `MonoBehaviour` and `ScriptableObject`.
+Use the UnitySerialization type instead of the BCL type for the serialized fields in your scripts that inherit from `MonoBehaviour` and `ScriptableObject`.
+
+| BCL Type | UnitySerialization Type |
+| --- | --- |
+| KeyValuePair<TKey, TValue> | SerializableKeyValuePair<TKey, TValue> | 
+| Dictionary<TKey, TValue> | SerializableDictionary<TKey, TValue> |
 
 ### Example
 
 ```cs
 public class MyScript : MonoBehaviour
 {
-  public SerializableDictionary<string, Texture2D> texturesWithNames;
+    public SerializableDictionary<string, Texture2D> texturesWithNames;
 }
 ```
