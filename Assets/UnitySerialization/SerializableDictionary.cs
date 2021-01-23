@@ -10,7 +10,7 @@ using UnityEngine;
 /// <typeparam name="TKey">Type used for the key.</typeparam>
 /// <typeparam name="TValue">Type used for the value.</typeparam>
 [Serializable]
-public sealed class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ISerializationCallbackReceiver
+public class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
     /// <summary>
     /// A list used to serialize the dictionary elements.
@@ -32,7 +32,10 @@ public sealed class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TVa
     private bool _containsDuplicateKeys = false;
 #pragma warning restore IDE0052
 
-    private Dictionary<TKey, TValue> _dictionary = new Dictionary<TKey, TValue>();
+    /// <summary>
+    /// The internal dictionary used for storing data.
+    /// </summary>
+    private readonly Dictionary<TKey, TValue> _dictionary = new Dictionary<TKey, TValue>();
 
     public TValue this[TKey key]
     {
@@ -206,14 +209,11 @@ public sealed class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TVa
     public SerializableDictionary(Dictionary<TKey, TValue> dictionary)
         : this()
     {
-        foreach (var keyValuePair in dictionary)
-        {
-            if (_elements == null)
-            {
-                _elements = new List<SerializableKeyValuePair<TKey, TValue>>();
-            }
+        _elements = new List<SerializableKeyValuePair<TKey, TValue>>();
 
-            _elements.Add(new SerializableKeyValuePair<TKey, TValue>(keyValuePair));
+        foreach (var serializedKeyValuePair in dictionary.Select(x => new SerializableKeyValuePair<TKey, TValue>(x)))
+        {
+            _elements.Add(serializedKeyValuePair);
         }
 
         UpdateDictionary();
@@ -226,6 +226,10 @@ public sealed class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TVa
     public static explicit operator SerializableDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
         => new SerializableDictionary<TKey, TValue>(dictionary);
 
+    /// <summary>
+    /// Converts a dictionary used for Unity's serialization system to a standard one.
+    /// </summary>
+    /// <param name="serializableDictionary">Serialized dictionary.</param>
     public static explicit operator Dictionary<TKey, TValue>(SerializableDictionary<TKey, TValue> serializableDictionary)
     {
         var dictionary = new Dictionary<TKey, TValue>();

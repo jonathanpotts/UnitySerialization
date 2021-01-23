@@ -8,7 +8,7 @@ using UnityEngine;
 /// <typeparam name="TKey">Type used for the key.</typeparam>
 /// <typeparam name="TValue">Type used for the value.</typeparam>
 [Serializable]
-public sealed class SerializableKeyValuePair<TKey, TValue>
+public class SerializableKeyValuePair<TKey, TValue>
 {
     /// <summary>
     /// Key.

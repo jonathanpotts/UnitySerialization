@@ -16,6 +16,7 @@ Use the UnitySerialization type instead of the BCL type for the serialized field
 | --- | --- |
 | KeyValuePair<TKey, TValue> | SerializableKeyValuePair<TKey, TValue> | 
 | Dictionary<TKey, TValue> | SerializableDictionary<TKey, TValue> |
+| HashSet<T> | SerializableHashSet<T> |
 
 ### Example
 
@@ -24,4 +25,15 @@ public class MyScript : MonoBehaviour
 {
     public SerializableDictionary<string, Texture2D> TexturesWithNames;
 }
+```
+
+## Conversion
+
+UnitySerialization objects can be converted to BCL objects and vice versa. To do so, using explicit casting.
+
+### Example
+
+```cs
+var standardDictionary = (Dictionary<string, Texture2D>)TexturesWithNames;
+var unityDictionary = (SerializedDictionary<string, Texture2D>)standardDictionary;
 ```
