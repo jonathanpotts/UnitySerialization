@@ -16,7 +16,7 @@ Use the UnitySerialization type instead of the BCL type for the serialized field
 | --- | --- |
 | KeyValuePair<TKey, TValue> | SerializableKeyValuePair<TKey, TValue> | 
 | Dictionary<TKey, TValue> | SerializableDictionary<TKey, TValue> |
-| HashSet<T> | SerializableHashSet<T> |
+| HashSet\<T> | SerializableHashSet\<T> |
 
 ### Example
 
