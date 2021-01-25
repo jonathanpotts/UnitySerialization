@@ -34,6 +34,6 @@ UnitySerialization objects can be converted to BCL objects and vice versa. To do
 ### Example
 
 ```cs
-var standardDictionary = (Dictionary<string, Texture2D>)TexturesWithNames;
-var unityDictionary = (SerializedDictionary<string, Texture2D>)standardDictionary;
+var bclDictionary = (Dictionary<string, Texture2D>)TexturesWithNames;
+var unitySerializationDictionary = (SerializedDictionary<string, Texture2D>)standardDictionary;
 ```
