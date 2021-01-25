@@ -29,7 +29,7 @@ public class MyScript : MonoBehaviour
 
 ## Conversion
 
-UnitySerialization objects can be converted to BCL objects and vice versa. To do so, using explicit casting.
+UnitySerialization objects can be converted to BCL objects and vice versa. To do so, use explicit casting.
 
 ### Example
 
