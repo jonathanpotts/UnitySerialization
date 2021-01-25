@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// A generic hash set implementation that works with Unity's serialization system to allow it to be used in the editor and assets.
+/// </summary>
+/// <typeparam name="T">Type used for the value.</typeparam>
 [Serializable]
 public class SerializableHashSet<T> : ISet<T>, ISerializationCallbackReceiver
 {
