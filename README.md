@@ -6,7 +6,7 @@ Provides support for serializing selected types that are not natively serialized
 
 ## Install
 
-To install, download the [latest release](https://github.com/jonathanpotts/UnitySerialization/releases) unitypackage and import it into your project.
+To install, download the [latest release unitypackage](https://github.com/jonathanpotts/UnitySerialization/releases/latest/download/UnitySerialization.unitypackage) and import it into your project.
 
 ## Quick start
 
